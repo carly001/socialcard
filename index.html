@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2B Rogue</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #0a0a0a;
+  --off-white: #f5f0e8;
+  --cream: #ede8dc;
+  --accent: #c8373a;
+  --muted: #888880;
+  --amz: #e47911;
+  --amz-dark: #c45e00;
+}
+
+body {
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* CARD */
+.container {
+  background: var(--off-white);
+  width: 340px;
+  max-width: 90vw;
+  border-radius: 28px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease;     
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+/* HEADER */
+.card-header {
+  height: 140px;
+  background: var(--black);
+  position: relative;
+  overflow: visible;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+}
+
+/* AVATAR */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid var(--off-white);
+  object-fit: cover;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -55px;
+}
+
+/* CONTENT */
+.card-content {
+  margin-top:60px;
+  padding: 0 20px;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0px;
+    font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.handle {
+  
+   font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-style: italic;
+  display: inline-block;
+    transition: transform 0.6s ease; /* smooth zoom */
+}
+
+.handle:hover {
+  color: var(--accent);
+      transform: scale(1.05); /* slightly zooms in */  
+}
+
+.subtext {
+   font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ICONS */
+.icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.icons a {
+  font-size: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--off-white);
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+ 
+
+.icons a:hover {
+  transform: translateY(-3px);
+  background: var(--accent);
+  color: var(--off-white);
+}
+ 
+.fa {
+  font-size: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--black);
+  color: var(--off-white);
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.fa:hover {
+  transform: translateY(-3px);
+  background: var(--accent);
+  color: var(--black);
+}
+
+.blog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 12px;
+  padding: 10px 16px;
+
+  background: var(--black);
+  color: var(--off-white);
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-size: 0.9rem;
+
+   font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  transition: 0.4s ease;
+}
+
+.blog-btn i {
+  font-size: 14px;
+
+   font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.blog-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.icon-link {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+
+.icon-link:hover .preview {
+    display: block;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- TOP OF CARD / HEADER BACKGROUND AND AVITAR -->
+  <div class="card-header">
+    <img src="flowerbw.jpg" class="bg-img" alt="">
+    <img src="streetts.png" class="avatar" alt="">
+  </div>
+
+  <div class="card-content">
+
+    <!-- TITLE / NAME -->
+    <h2 class="name">Carly</h2>
+
+    <!-- PREVIEW PAGE -->
+
+
+    <!-- MAIN HANDLE -->
+
+     <a href="https://instagram.com/somethinglikecarly" class="handle" title="Instagram Carly Hudgins" target="_blank">@SomethingLikeCarly</a>
+    <a href="https://beacons.page/somethinglikecarly" class="handle" target="_blank">@SomethingLikeCarly</a>
+
+    <!-- TAGLINE -->
+    <p class="subtext">Not made to blend in.</p>
+
+    <!-- ICONS -->
+    <div class="icons">
+    
+      <a href="https://www.pinterest.com/brogueofficial" title="Pinterest" class="fa fa-pinterest" target="_blank"></a>
+  
+      <a href=https://beacons.page/somethinglikecarly" class="fa fa-bolt" target="_blank" title="Blow your mind Carly's Beacons Page"></a>
+
+      <a href="https://stan.store/2bRogue" title="Stan" class="fa fa-compass" target="_blank"></a>    
+
+  <a href="https://github.com/somethinglikecarly" title="Github" class="icon-link" target="_blank">
+    <i class="fa fa-github"></i>
+</a>
+</div>
+</div>
+
+
+    <!-- BUTTON -->
+    <a href="the-blog.html" class="blog-btn" target="_blank">2b Rogue</a>
+
+  </div>
+</div>
+
+</body>
+</html>
